@@ -71,7 +71,10 @@ t_log* iniciar_logger(void) {
 
 t_config* iniciar_config(void) {
    t_config *nuevo_config;
-   if ((nuevo_config = config_create("./cliente.config")) == NULL) {
+   char* ruta = getcwd(NULL, 0);
+   string_append(&ruta, "/cliente.config");
+   printf("Ruta: %s", ruta);
+   if ((nuevo_config = config_create(ruta)) == NULL) {
        printf("No pude crear el config");
        exit(2);
    }
