@@ -71,7 +71,7 @@ t_log* iniciar_logger(void) {
 
 t_config* iniciar_config(void) {
    t_config *nuevo_config;
-   if ((nuevo_config = config_create("cliente.config")) == NULL) {
+   if ((nuevo_config = config_create("./cliente.config")) == NULL) {
        printf("No pude crear el config");
        exit(2);
    }
