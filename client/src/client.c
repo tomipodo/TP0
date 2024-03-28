@@ -73,13 +73,11 @@ t_config* iniciar_config(void) {
    t_config *nuevo_config;
    char* ruta = getcwd(NULL, 0);
    string_append(&ruta, "/cliente.config");
-   printf("Ruta: %s", ruta);
    if ((nuevo_config = config_create(ruta)) == NULL) {
        printf("No pude crear el config");
        exit(2);
    }
-
-
+   free(ruta);
    return nuevo_config;
 }
 
